@@ -1,0 +1,59 @@
+version: 2
+
+sources:
+  - name: ncaa_basketball
+    database: bigquery-public-data
+    description: NCAA basket ball data from BigQuery public datasets
+    schema: ncaa_basketball
+    tables:
+      - name: mascots
+        description: NCAA team mascot data
+        columns:
+          - name: id
+            description: Primary key for mascots
+            tests:
+              - unique
+              - not_null
+      - name: mbb_games_sr
+        description: Team level box scores
+        columns:
+          - name: game_id
+            description: Primary key for each game
+            tests:
+              - unique
+              - not_null
+      - name: mbb_historical_teams_games
+        description: Final scores for men's basketball games, starting with the 1996-97 season. Each game is included twice, with one entry per team. 
+      - name: mbb_historical_teams_seasons
+        description: Season record information for Men's Basketball, starting with the 1894-95 season. Each game is included twice, with one entry per team. 
+      - name: mbb_historical_tournament_games
+        description: Game score information from Men's Basketball games, starting with the 1984-85 tournament. Each row shows one game. 
+      - name: mbb_pbp_sr
+        description: Play-by-play information from men's basketball games, starting with the 2013-14 season. Each row shows a single event in a game. 
+      - name: mbb_players_games_sr
+        description:  Player-level box scores from every men's basketball game from the 2013-14 season to the 2017-18 season. Each row shows a single player's stats in one game.
+      - name: mbb_teams
+        description: General information about the 351 current men's D1 basketball teams. 
+        columns:
+          - name: id
+            description: Primary key for teams
+            tests:
+              - unique
+              - not_null
+      - name: mbb_teams_games_sr
+        description: Team-level box scores from every men's basketball game from the 2013-14 season to the 2017-18 season. Each row shows a single team's stats in one game. This data is identical to mbb_games_sr, but is organized differently to make it easier to calculate a single team's statistics.
+        columns:
+          - name: game_id
+            description: Primary key for each game
+            tests:
+              - unique
+              - not_null
+      - name: team_colors
+        description:  Hex color codes for the 351 current men's D1 basketball teams. 
+        columns:
+          - name: id
+            description: Primary key for each team
+            tests:
+              - unique
+              - not_null
+  

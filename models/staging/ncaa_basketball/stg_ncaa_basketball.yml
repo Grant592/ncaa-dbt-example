@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_mascots
+    description: NCAA basketball team stg_mascots
+    # individual config can be applied here 
+    # config:
+    #   schema: individual_schema
+    #
+    
+    
+  - name: stg_box_scores
+    description: Team level box scores
