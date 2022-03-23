@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: dim_players
+    description: All players for each season and the team played for
+    columns:
+      - name: player_id
+        description: Unique player identifier
+        tests:
+          - not_null
+
+  - name: fct_player_minutes
+    description: Summary of minutes played each season for each player
+    # We can run a test to make sure we don't have any duplicates
+    # for a player/team combination
+    tests:
+      - unique:
+          column_name: "(player_id || '-' || full_name || '-' || team_name)"
