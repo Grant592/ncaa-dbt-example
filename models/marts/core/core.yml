@@ -16,3 +16,9 @@ models:
     tests:
       - unique:
           column_name: "(player_id || '-' || full_name || '-' || team_name)"
+  
+  - name: fct_post_score_events
+    description: Summary of events that happened after a team hits/misses a two or three point score
+
+  - name: fct_five_game_rolling_averages
+    description: Rolling averages for 5 game windows for each team
