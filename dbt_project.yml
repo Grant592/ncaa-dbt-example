@@ -35,9 +35,11 @@ models:
   ncaa_basketball:
     +materialized: view
     staging:
-      schema: staging
+      +schema: staging
     marts:
       +materialized: table
       core:
-        schema: core
+        +schema: core
+        intermediate:
+          +schema: intermediate
 
