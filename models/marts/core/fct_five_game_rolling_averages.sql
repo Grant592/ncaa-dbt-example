@@ -74,4 +74,6 @@ select
   round(safe_divide(two_point_made_sum_28, two_point_att_sum_28) * 100, 2) as two_point_28_day_pct,
   round(safe_divide(three_point_made_sum_28, three_point_att_sum_28) * 100, 2) as three_point_pct_28_day_pct,
 from five_game_summary
+order by 1,2
+
     
